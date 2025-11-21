@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mi Biblioteca</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <h1>Mi Biblioteca</h1>
+    <h2 class="subtitulo">Explora, busca y organiza tus libros favoritos de manera simple.</h2>
+    <input id="searchInput" type="text" placeholder="Buscar por título, autor o categoría..." aria-label="Buscar libros"/>
+    <nav class="filters" aria-label="Filtros de biblioteca">
+      <button data-filter="all" class="tab active">Todos</button>
+      <button data-filter="favorites" class="tab">Favoritos</button>
+      <button data-filter="pending" class="tab">Pendientes</button>
+    </nav>
+  </header>
+  <main class="container">
+    <section id="booksGrid" class="grid"></section>
+    <div id="noResults" style="display:none;">No se encontraron libros para tu búsqueda.</div>
+  </main>
+  <footer class="footer">
+    <small>&copy; 2025 Tu Nombre | Proyecto Biblioteca</small>
+  </footer>
+  <template id="bookCardTpl">
+    <article class="card">
+      <img class="cover" alt="Portada del libro"/>
+      <div class="info">
+        <h3 class="title"></h3>
+        <p class="author"></p>
+        <p class="category"></p>
+        <p class="synopsis"></p>
+      </div>
+      <div class="actions">
+        <button class="btn-fav">❤ Favorito</button>
+        <button class="btn-pending">⏳ Pendiente</button>
+      </div>
+    </article>
+  </template>
+</body>
+</html>
+
